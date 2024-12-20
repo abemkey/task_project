@@ -1,0 +1,14 @@
+{% extends 'admin_dashboard.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+{{form|crispy}}
+<button type="submit" class="btn btn-success">submit</button>
+    </form>
+<form method="get" action="{% url 'studies_list' %}">
+    <button type="submit" class="btn btn-danger">Cancel</button>
+</form>
+{% endblock %}

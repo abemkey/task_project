@@ -1,0 +1,39 @@
+{% extends 'admin_dashboard.html' %}
+
+{% block content %}
+
+
+<table class="table" id="example">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">study Name</th>
+      <th scope="col">study Phase</th>
+      <th scope="col">Sponsor Name</th>
+      <th scope="col">study Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>{{study_object.id}}</td>
+      <td>{{study_object.study_Name}}</td>
+      <td>{{study_object.study_Phase}}</td>
+      <td>{{study_object.Sponsor_Name}}</td>
+      <td>{{study_object.study_Description}}</td>
+      <td>
+        <form method="get" action="{% url 'studies_list' %}">
+    <button type="submit" class="btn btn-danger">Cancel</button>
+      </td>
+
+
+
+
+    </tr>
+
+
+  </tbody>
+</table>
+
+{% endblock %}
